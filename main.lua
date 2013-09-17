@@ -13,12 +13,13 @@
 --You should have received a copy of the GNU General Public License
 --along with soviet-attack.  If not, see <http://www.gnu.org/licenses/>.
 
---Loading media
+--Loading media for main menu
 soundtrecks = love.filesystem.enumerate("snd/mus")
 function love.load()
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
    love.audio.play(playing)
+   background = love.graphics.newImage("img/bkg/background_menu.jpg")
 end
 
 --function for updating
@@ -31,5 +32,5 @@ end
 
 --Draw result
 function love.draw()
---some code.
+   love.graphics.draw(background,0,0)
 end
