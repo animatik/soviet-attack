@@ -13,16 +13,15 @@
 --You should have received a copy of the GNU General Public License
 --along with soviet-attack.  If not, see <http://www.gnu.org/licenses/>.
 
--- loading library for working with animation
+--Loading media
 soundtrecks = love.filesystem.enumerate("snd/mus")
---Load media
 function love.load()
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
    love.audio.play(playing)
 end
 
---Update
+--function for updating
 function love.update()
    if playing:isStopped()then
       playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
