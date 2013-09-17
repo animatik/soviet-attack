@@ -13,16 +13,19 @@
 --You should have received a copy of the GNU General Public License
 --along with soviet-attack.  If not, see <http://www.gnu.org/licenses/>.
 
-require "lib/animation.lua" -- loading library for working with animation
+--require "lib/animation.lua" -- loading library for working with animation
 
 --Load media
 function love.load()
---some code.
+   menu_sound = love.audio.newSource('snd/mus/main_theme.mp3','stream')
+   love.audio.play(menu_sound)
 end
 
 --Update
 function love.update()
---some code.
+   if menu_sound:isStopped()then
+      love.audio.play(menu_sound)
+   end
 end
 
 --Draw result
