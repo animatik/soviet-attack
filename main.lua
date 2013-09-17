@@ -19,7 +19,8 @@ function love.load()
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
    love.audio.play(playing)
-   background = love.graphics.newImage("img/bkg/background_menu.jpg")
+   background = love.graphics.newImage("img/bkg/sky.png")
+   city = love.graphics.newImage("img/bkg/city.png")
 end
 
 --function for updating
@@ -33,4 +34,5 @@ end
 --Draw result
 function love.draw()
    love.graphics.draw(background,0,0)
+   love.graphics.draw(city,0,260)
 end
