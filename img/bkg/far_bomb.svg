@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="/home/kirill/soviet_attack/img/bkg/far_bomb.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="Новый документ 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="267.38404"
+     inkscape:cy="617.99886"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3011"
+       style="opacity:0.83093525;fill:#2b0000;stroke:none"
+       transform="matrix(0.06016107,0.03473401,-0.03473401,0.06016107,127.61846,288.30604)">
+      <path
+         sodipodi:nodetypes="ccczc"
+         inkscape:connector-curvature="0"
+         id="path2987"
+         d="m 82.857143,326.6479 c 40.491107,47.91816 64.071707,84.56266 58.919857,102.05219 l 48.223,0 c 0,0 4.41349,-32.42239 -9.67147,-60.25538 C 166.24356,340.61173 82.857143,326.6479 82.857143,326.6479 z"
+         style="fill:#2b0000;stroke:none" />
+      <path
+         sodipodi:nodetypes="ccczc"
+         inkscape:connector-curvature="0"
+         id="path2987-8"
+         d="M 82.857143,530.12866 C 123.34825,482.2105 146.92885,445.566 141.777,428.07647 l 48.223,0 c 0,0 4.41349,32.42239 -9.67147,60.25538 -14.08497,27.83298 -97.471387,41.79681 -97.471387,41.79681 z"
+         style="fill:#2b0000;stroke:none" />
+      <path
+         sodipodi:nodetypes="czzzc"
+         inkscape:connector-curvature="0"
+         id="path3009"
+         d="m 95.714286,432.36218 c 0,0 43.828994,-81.57187 141.286624,-81.57187 97.45763,0 160.68038,49.82002 163.54671,80.80102 2.86634,30.981 -70.08354,72.10986 -161.83286,70.53375 -91.74933,-1.57611 -143.000474,-69.7629 -143.000474,-69.7629 z"
+         style="fill:#2b0000;stroke:none" />
+    </g>
+  </g>
+</svg>
