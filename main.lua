@@ -23,6 +23,7 @@ function love.load()
    city = love.graphics.newImage("img/bkg/city.png")
    title = love.graphics.newImage("img/bkg/title.png")
    foot = love.graphics.newImage("img/bkg/foot.png")
+   rocket = love.graphics.newImage("img/bkg/rocket.png")
 end
 
 --function for updating
@@ -39,4 +40,5 @@ function love.draw()
    love.graphics.draw(city,0,260)
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
+   love.graphics.draw(rocket,500,50)
 end
