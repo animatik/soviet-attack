@@ -96,6 +96,7 @@ function  draw_particles(tb,img,img2)
    end
 end
 function love.load()
+   love.mouse.setVisible(false)
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
    love.audio.play(playing)
@@ -126,6 +127,7 @@ function love.load()
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
    furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
    lamp = love.graphics.newImage("img/bkg/lamp.png")
+   cursor = love.graphics.newImage("img/bkg/cursor.png")
    make_particles(far_bombs,3)
    make_particles(furthest_bombs,3)
    make_particles(bombs,3)
@@ -158,4 +160,5 @@ function love.draw()
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
    love.graphics.draw(rocket,500,50)
+   love.graphics.draw(cursor,love.mouse.getX(),love.mouse.getY())
 end
