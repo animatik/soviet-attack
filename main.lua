@@ -105,9 +105,9 @@ function love.load()
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
    furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
    lamp = love.graphics.newImage("img/bkg/lamp.png")
-   make_particles(far_bombs,5)
-   make_particles(furthest_bombs,5)
-   make_particles(bombs,5)
+   make_particles(far_bombs,3)
+   make_particles(furthest_bombs,3)
+   make_particles(bombs,3)
 end
 
 --function for updating
@@ -116,9 +116,9 @@ function love.update(dt)
       playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
       love.audio.play(playing)
    end
-   change_particles(far_bombs,50,70,dt)
-   change_particles(furthest_bombs,30,70,dt)
-   change_particles(bombs,60,70,dt)
+   change_particles(far_bombs,90,120,dt)
+   change_particles(furthest_bombs,70,120,dt)
+   change_particles(bombs,100,120,dt)
    projector_move(projector1,-0.3,0.3,0.1,dt)
    projector_move(projector2,-0.4,0.1,0.1,dt)
 end
