@@ -30,6 +30,12 @@ projector2.x = 300
 projector2.y = 570
 projector2.r = 0
 projector2.v = false
+projector3 = {}
+table.insert(projector3,{x,y,r,v})
+projector3.x = 150
+projector3.y = 600
+projector3.r = 0.5
+projector3.v = true
 function make_particles(tb,count)
    for i = 1,count do
       table.insert(tb,{x,y,status})
@@ -121,6 +127,7 @@ function love.update(dt)
    change_particles(bombs,100,120,dt)
    projector_move(projector1,-0.3,0.3,0.1,dt)
    projector_move(projector2,-0.4,0.1,0.1,dt)
+   projector_move(projector3,-0.6,0.6,0.2,dt)
 end
 
 --Draw result
@@ -132,6 +139,7 @@ function love.draw()
    love.graphics.draw(city,0,260)
    draw_particles(bombs,bomb,explosion)
    love.graphics.draw(lamp,projector1.x,projector1.y,projector1.r,1,1,75,586)
+   love.graphics.draw(lamp,projector3.x,projector3.y,projector3.r,1,1,75,586)
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
    love.graphics.draw(rocket,500,50)
