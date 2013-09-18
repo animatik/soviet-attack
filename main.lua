@@ -21,6 +21,8 @@ function love.load()
    love.audio.play(playing)
    background = love.graphics.newImage("img/bkg/sky.png")
    city = love.graphics.newImage("img/bkg/city.png")
+   title = love.graphics.newImage("img/bkg/title.png")
+   foot = love.graphics.newImage("img/bkg/foot.png")
 end
 
 --function for updating
@@ -35,4 +37,6 @@ end
 function love.draw()
    love.graphics.draw(background,0,0)
    love.graphics.draw(city,0,260)
+   love.graphics.draw(title,15,14)
+   love.graphics.draw(foot,-8,490)
 end
