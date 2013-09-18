@@ -16,16 +16,39 @@
 --Loading media for main menu
 soundtrecks = love.filesystem.enumerate("snd/mus")
 far_bombs = {}
-for i = 1,50 do
-   table.insert(far_bombs,{x,y})
-   far_bombs[i].x = math.random(-300,450)
-   if far_bombs[i].x < 0 then
-      far_bombs[i].y = math.random(200)
-   else
-      far_bombs[i].y = math.random(200)*-1
+furthest_bombs = {}
+function make_particles(tb,count)
+   for i = 1,count do
+      table.insert(tb,{x,y})
+      tb[i].x = math.random(-300,450)
+      if tb[i].x < 0 then
+         tb[i].y = math.random(200)
+      else
+         tb[i].y = math.random(200)*-1
+      end
    end
 end
- 
+
+function change_particles(tb,speed,shift,delta)
+   for i = 1,#tb do
+      if tb[i].y > 360 then
+         tb[i].x = math.random(-300,450)
+	 if tb[i].x < 0 then
+	    tb[i].y = math.random(200)
+	 else
+            tb[i].y = math.random(200)*-1
+	 end
+      end
+      tb[i].y = tb[i].y + (speed*delta)
+      tb[i].x = tb[i].x + (shift*delta)
+   end
+end
+
+function  draw_particles(tb,img)
+   for i = 1,#tb do
+      love.graphics.draw(img,tb[i].x,tb[i].y)
+   end
+end
 function love.load()
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
@@ -36,7 +59,10 @@ function love.load()
    foot = love.graphics.newImage("img/bkg/foot.png")
    rocket = love.graphics.newImage("img/bkg/rocket.png")
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
-   far_bomb_speed = 50
+   furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
+   make_particles(far_bombs,10)
+   make_particles(furthest_bombs,10)
+   print(furthest_bombs[1].x)
 end
 
 --function for updating
@@ -45,27 +71,15 @@ function love.update(dt)
       playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
       love.audio.play(playing)
    end
-   for i = 1,#far_bombs do
-      if far_bombs[i].y > 360 then
-         far_bombs[i].x = math.random(-300,450)
-	 if far_bombs[i].x < 0 then
-	    far_bombs[i].y = math.random(200)
-	 else
-            far_bombs[i].y = math.random(200)*-1
-	 end
-      end
-      far_bombs[i].y = far_bombs[i].y + (far_bomb_speed*dt)
-      far_bombs[i].x = far_bombs[i].x + (70*dt)
-   end
+   change_particles(far_bombs,50,70,dt)
+   change_particles(furthest_bombs,40,60,dt)
 end
 
 --Draw result
 function love.draw()
    love.graphics.draw(background,0,0)
-   for i = 1,#far_bombs do
-      print(far_bombs[i].y)
-      love.graphics.draw(far_bomb,far_bombs[i].x,far_bombs[i].y)
-   end
+   draw_particles(furthest_bombs,furthest_bomb)
+   draw_particles(far_bombs,far_bomb)
    love.graphics.draw(city,0,260)
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
