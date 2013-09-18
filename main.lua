@@ -28,12 +28,13 @@ function make_particles(tb,count)
          tb[i].y = math.random(200)*-1
       end
       tb[i].status = -1
+      tb[i].maxy = math.random(360,500)
    end
 end
 
 function change_particles(tb,speed,shift,delta)
    for i = 1,#tb do
-      if tb[i].y > math.random(360,500) then
+      if tb[i].y > tb[i].maxy then
          if tb[i].status > 0 then
             tb[i].status = tb[i].status - 1
          elseif tb[i].status == 0 then
@@ -44,6 +45,7 @@ function change_particles(tb,speed,shift,delta)
             else
                tb[i].y = math.random(200)*-1
             end
+            tb[i].maxy = math.random(360,500)
          else
             tb[i].status = 5
          end
