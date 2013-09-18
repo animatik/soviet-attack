@@ -89,7 +89,7 @@ end
 function  draw_particles(tb,img,img2)
    for i = 1,#tb do
       if tb[i].status > -1 then
-         love.graphics.draw(img2,tb[i].x,tb[i].y)
+         love.graphics.draw(img2.i,tb[i].x,tb[i].y,math.random(-1.0,1.0),1,1,img2.w/2,img2.h/2)
       else
          love.graphics.draw(img,tb[i].x,tb[i].y)
       end
@@ -104,9 +104,24 @@ function love.load()
    title = love.graphics.newImage("img/bkg/title.png")
    foot = love.graphics.newImage("img/bkg/foot.png")
    rocket = love.graphics.newImage("img/bkg/rocket.png")
-   explosion = love.graphics.newImage("img/bkg/explosion.png")
-   far_explosion = love.graphics.newImage("img/bkg/far_explosion.png")
-   furthest_explosion = love.graphics.newImage("img/bkg/furthest_explosion.png")
+   img_explosion = love.graphics.newImage("img/bkg/explosion.png")
+   explosion = {}
+   table.insert(explosion,{i,w,h})
+   explosion.i = img_explosion
+   explosion.w = 108
+   explosion.h = 108
+   img_far_explosion = love.graphics.newImage("img/bkg/far_explosion.png")
+   far_explosion = {}
+   table.insert(explosion,{i,w,h})
+   far_explosion.i = img_far_explosion
+   far_explosion.w = 58
+   far_explosion.h = 58
+   img_furthest_explosion = love.graphics.newImage("img/bkg/furthest_explosion.png")
+   furthest_explosion = {}
+   table.insert(explosion,{i,w,h})
+   furthest_explosion.i = img_furthest_explosion
+   furthest_explosion.w = 23
+   furthest_explosion.h = 23
    bomb = love.graphics.newImage("img/bkg/bomb.png")
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
    furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
