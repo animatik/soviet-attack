@@ -15,6 +15,7 @@
 
 --Loading media for main menu
 soundtrecks = love.filesystem.enumerate("snd/mus")
+soundwar = love.filesystem.enumerate("snd/war")
 far_bombs = {}
 furthest_bombs = {}
 bombs = {}
@@ -124,7 +125,9 @@ function love.load()
    love.mouse.setVisible(false)
    play_address = soundtrecks[math.random(3)]
    playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
+   playing_war = love.audio.newSource("snd/war/"..soundwar[math.random(#soundwar)])
    love.audio.play(playing)
+   love.audio.play(playing_war)
    background = love.graphics.newImage("img/bkg/sky.png")
    city = love.graphics.newImage("img/bkg/city.png")
    title = love.graphics.newImage("img/bkg/title.png")
@@ -197,6 +200,10 @@ function love.update(dt)
    if playing:isStopped()then
       playing = love.audio.newSource("snd/mus/"..soundtrecks[math.random(#soundtrecks)])
       love.audio.play(playing)
+   end
+   if playing_war:isStopped()then
+      playing_war = love.audio.newSource("snd/war/"..soundwar[math.random(#soundwar)])
+      love.audio.play(playing_war)
    end
    change_particles(far_bombs,90,120,dt)
    change_particles(furthest_bombs,70,120,dt)
