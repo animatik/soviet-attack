@@ -152,16 +152,20 @@ function love.load()
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
    furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
    lamp = love.graphics.newImage("img/bkg/lamp.png")
-   button_tut = love.graphics.newImage("img/bkg/button_tut.png")
-   button_versus = love.graphics.newImage("img/bkg/button_versus.png")
-   button_campaign = love.graphics.newImage("img/bkg/button_campaign.png")
-   button_options = love.graphics.newImage("img/bkg/button_options.png")
+   button_tut = love.graphics.newImage("img/bkg/button_tut_normal.png")
+   button_versus = love.graphics.newImage("img/bkg/button_versus_normal.png")
+   button_campaign = love.graphics.newImage("img/bkg/button_campaign_normal.png")
+   button_options = love.graphics.newImage("img/bkg/button_options_normal.png")
    button_exit = {}
    table.insert(button_exit,{normal,over,pressed})
    button_exit.normal = love.graphics.newImage("img/bkg/button_exit_normal.png")
    button_exit.over = love.graphics.newImage("img/bkg/button_exit_over.png")
    button_exit.pressed = love.graphics.newImage("img/bkg/button_exit_pressed.png")
-   button_about = love.graphics.newImage("img/bkg/button_about.png")
+   button_about = {}
+   table.insert(button_about,{normal,over,pressed})
+   button_about.normal = love.graphics.newImage("img/bkg/button_about_normal.png")
+   button_about.over = love.graphics.newImage("img/bkg/button_about_over.png")
+   button_about.pressed = love.graphics.newImage("img/bkg/button_about_pressed.png")
    cursor = love.graphics.newImage("img/bkg/cursor.png")
    make_particles(far_bombs,3)
    make_particles(furthest_bombs,3)
@@ -199,7 +203,14 @@ function love.draw()
    love.graphics.draw(button_versus,20,125)
    love.graphics.draw(button_campaign,20,190)
    love.graphics.draw(button_options,20,255)
-   love.graphics.draw(button_about,20,320)
+   if button_over(20,320,288,91) then
+      love.graphics.draw(button_about.over,20,320)
+      if button_pressed(20,320,288,91) then
+         love.graphics.draw(button_about.pressed,20,320)
+      end
+   else
+      love.graphics.draw(button_about.normal,20,320)
+   end
    if button_over(20,385,288,91) then
       love.graphics.draw(button_exit.over,20,385)
       if button_pressed(20,385,288,91) then
