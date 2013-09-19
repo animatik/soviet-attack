@@ -16,6 +16,7 @@
 --Loading media for main menu
 soundtrecks = love.filesystem.enumerate("snd/mus")
 soundwar = love.filesystem.enumerate("snd/war")
+soundexplosions = love.filesystem.enumerate("snd/exp")
 far_bombs = {}
 furthest_bombs = {}
 bombs = {}
@@ -80,6 +81,8 @@ function change_particles(tb,speed,shift,delta)
             tb[i].maxy = math.random(360,500)
          else
             tb[i].status = 5
+            playing_explosion = love.audio.newSource("snd/exp/"..soundexplosions[math.random(#soundexplosions)])
+            love.audio.play(playing_explosion)
          end
       else
          tb[i].y = tb[i].y + (speed*delta)
