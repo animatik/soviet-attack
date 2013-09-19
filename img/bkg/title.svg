@@ -26,6 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,7 +46,7 @@
      id="namedview3237"
      showgrid="false"
      inkscape:zoom="0.995"
-     inkscape:cx="384"
+     inkscape:cx="181.48744"
      inkscape:cy="300"
      inkscape:window-x="65"
      inkscape:window-y="24"
@@ -53,28 +54,28 @@
      inkscape:current-layer="svg3235" />
   <text
      xml:space="preserve"
-     style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#6d0000;fill-opacity:1;stroke:none;stroke-width:2.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Impact;-inkscape-font-specification:Impact Bold;opacity:0.79856115"
-     x="27.969036"
-     y="60.146839"
+     style="font-size:53.14869308px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.79856113;fill:#6d0000;fill-opacity:1;stroke:none;font-family:Furore;-inkscape-font-specification:Furore Bold"
+     x="28.802956"
+     y="70.363113"
      id="text3245-7"
      sodipodi:linespacing="125%"
-     transform="matrix(1.2422315,0.16342163,-0.0364879,0.80020278,0,0)"><tspan
+     transform="matrix(1.180069,0.1190364,-0.01068599,0.84633016,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3247-4"
-       x="27.969036"
-       y="60.146839"
-       style="font-size:48px;fill:#6d0000;stroke:none;stroke-width:2.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1">СССР АТАКУЕТ!</tspan></text>
+       x="28.802956"
+       y="70.363113"
+       style="font-size:45.55602264px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#6d0000;fill-opacity:1;stroke:none;font-family:Furore;-inkscape-font-specification:Furore Bold">СССР АТАКУЕТ!</tspan></text>
   <text
      xml:space="preserve"
-     style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:#ff8000;font-family:Impact;-inkscape-font-specification:Impact Bold;stroke-opacity:1;stroke-width:2.49999999;stroke-miterlimit:4;stroke-dasharray:none"
-     x="32.256165"
-     y="54.541019"
+     style="font-size:53.14869308px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:#ff8000;stroke-width:2.37270951;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Furore;-inkscape-font-specification:Furore Bold"
+     x="32.871799"
+     y="65.042725"
      id="text3245"
      sodipodi:linespacing="125%"
-     transform="matrix(1.2422315,0.16342163,-0.0364879,0.80020278,0,0)"><tspan
+     transform="matrix(1.180069,0.1190364,-0.01068599,0.84633016,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3247"
-       x="32.256165"
-       y="54.541019"
-       style="font-size:48px;fill:#d40000;stroke:#ff8000;stroke-opacity:1;stroke-width:2.49999999;stroke-miterlimit:4;stroke-dasharray:none">СССР АТАКУЕТ!</tspan></text>
+       x="32.871799"
+       y="65.042725"
+       style="font-size:45.55602264px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#d40000;stroke:#ff8000;stroke-width:2.37270951;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Furore;-inkscape-font-specification:Furore Bold">СССР АТАКУЕТ!</tspan></text>
 </svg>
