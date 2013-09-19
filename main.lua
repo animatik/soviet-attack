@@ -152,7 +152,12 @@ function love.load()
    far_bomb = love.graphics.newImage("img/bkg/far_bomb.png")
    furthest_bomb = love.graphics.newImage("img/bkg/furthest_bomb.png")
    lamp = love.graphics.newImage("img/bkg/lamp.png")
-   button_tut = love.graphics.newImage("img/bkg/button_tut_normal.png")
+   button_tut = {}
+   table.insert(button_tut,{normal,over,pressed})
+   button_tut.normal = love.graphics.newImage("img/bkg/button_tut_normal.png")
+   button_tut.over = love.graphics.newImage("img/bkg/button_tut_over.png")
+   button_tut.pressed = love.graphics.newImage("img/bkg/button_tut_pressed.png")
+   cursor = love.graphics.newImage("img/bkg/cursor.png")
    button_versus = {}
    table.insert(button_versus,{normal,over,pressed})
    button_versus.normal = love.graphics.newImage("img/bkg/button_versus_normal.png")
@@ -214,7 +219,15 @@ function love.draw()
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
    love.graphics.draw(rocket,500,50)
-   love.graphics.draw(button_tut,20,60)
+   if button_over(20,60,288,91) then
+      love.graphics.draw(button_tut.over,20,60)
+      if button_pressed(20,60,288,91) then
+         love.graphics.draw(button_tut.pressed,20,60)
+      end
+   else
+      love.graphics.draw(button_tut.normal,20,60)
+   end
+
    if button_over(20,125,288,91) then
       love.graphics.draw(button_versus.over,20,125)
       if button_pressed(20,125,288,91) then
