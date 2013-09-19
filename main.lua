@@ -21,6 +21,8 @@ far_bombs = {}
 furthest_bombs = {}
 bombs = {}
 projector1 = {}
+wa_show = false
+window_opened = false
 table.insert(projector1,{x,y,r,v})
 projector1.x = 550
 projector1.y = 550
@@ -102,26 +104,30 @@ function  draw_particles(tb,img,img2)
 end
 
 function button_over(bx,by,bw,bh)
-   mx,my = love.mouse.getPosition()
-   local over
-   if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
-      over = true
-   else
-      over = false
-   end
+   if window_opened == false then
+      mx,my = love.mouse.getPosition()
+      local over
+      if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
+         over = true
+      else
+         over = false
+      end
    return over
+   end
 end
 
 function button_pressed(bx,by,bw,bh)
-   mx,my = love.mouse.getPosition()
-   md = love.mouse.isDown('l')
-   local over
-   if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
-      over = true
-   else
-      over = false
+   if window_opened == false then
+      mx,my = love.mouse.getPosition()
+      md = love.mouse.isDown('l')
+      local over
+      if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
+         over = true
+      else
+         over = false
+      end
+      return md and over
    end
-   return md and over
 end
 
 function love.load()
@@ -193,6 +199,9 @@ function love.load()
    button_about.over = love.graphics.newImage("img/bkg/button_about_over.png")
    button_about.pressed = love.graphics.newImage("img/bkg/button_about_pressed.png")
    cursor = love.graphics.newImage("img/bkg/cursor.png")
+   window_about = {}
+   table.insert(window_about,{normal,over})
+   window_about.normal = love.graphics.newImage("img/bkg/window_about/window_normal.png")
    make_particles(far_bombs,3)
    make_particles(furthest_bombs,3)
    make_particles(bombs,3)
@@ -269,6 +278,8 @@ function love.draw()
       love.graphics.draw(button_about.over,20,340)
       if button_pressed(20,340,288,70) then
          love.graphics.draw(button_about.pressed,20,340)
+         wa_show = true
+         window_opened = true
       end
    else
       love.graphics.draw(button_about.normal,20,340)
@@ -283,6 +294,8 @@ function love.draw()
    else
       love.graphics.draw(button_exit.normal,20,410)
    end
-
+   if wa_show == true then
+      love.graphics.draw(window_about.normal,100,40)
+   end
    love.graphics.draw(cursor,love.mouse.getX(),love.mouse.getY())
 end
