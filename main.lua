@@ -232,8 +232,8 @@ function love.load()
    cursor = love.graphics.newImage("img/bkg/cursor.png")
    window_about = {
    normal = love.graphics.newImage("img/bkg/window_about/window_normal.png"),
-   x = 300,
-   y = 300,
+   x = 50,
+   y = 110,
    width = 508,
    height = 508,
    diffx = 0,
@@ -342,8 +342,7 @@ function love.draw()
       window_about.show = false
       window_opened = false
    end
-   print(love.mouse.getX(),' ',love.mouse.getY(),'- mouse')
-   print(window_about.x,' ',window_about.y,'- window')
+   
    if window_about.show then
       love.graphics.draw(window_about.normal,window_about.x,window_about.y)
    end
