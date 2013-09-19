@@ -22,6 +22,7 @@ furthest_bombs = {}
 bombs = {}
 projector1 = {}
 window_opened = false
+drag_now = ''
 table.insert(projector1,{x,y,r,v})
 projector1.x = 550
 projector1.y = 550
@@ -130,18 +131,22 @@ function button_pressed(bx,by,bw,bh)
 end
 
 function love.mousepressed(x,y,button)
-   if button == "l"    
-   and x > window_about.x and x < window_about.x + window_about.width
-   and y > window_about.y and y < window_about.y + window_about.height
-   then
-      window_about.active = true
-      window_about.diffx = x - window_about.x
-      window_about.diffy = y - window_about.y
+   if not (drag_now == '') then
+      if button == "l"    
+      and x > drag_now.x and x < drag_now.x + drag_now.width
+      and y > drag_now.y and y < drag_now.y + (drag_now.height - 490)
+      then
+         drag_now.active = true
+         drag_now.diffx = x - drag_now.x
+         drag_now.diffy = y - drag_now.y
+      end
    end
 end
 
-function love.mousereleased(x,y,button,w)
-   if button == "l" then window_about.active = false end
+function love.mousereleased(x,y,button)
+if not (drag_now == '') then
+   if button == "l" then drag_now.active = false end
+end
 end
 
 function love.load()
@@ -219,8 +224,8 @@ function love.load()
    y = 300,
    width = 508,
    height = 508,
-   difx = 0,
-   dify = 0,
+   diffx = 0,
+   diffy = 0,
    active = false,
    show = false
    }
@@ -304,6 +309,7 @@ function love.draw()
       love.graphics.draw(button_about.over,20,340)
       if button_pressed(20,340,288,70) then
          love.graphics.draw(button_about.pressed,20,340)
+         drag_now = window_about
          window_about.show = true
          window_opened = true
       end
@@ -319,6 +325,11 @@ function love.draw()
       end
    else
       love.graphics.draw(button_exit.normal,20,410)
+   end
+   if button_pressed(window_about.x,window_about.y,10,10) then
+      window_about.show = false
+      window_opened = false
+      drag_now = ''
    end
    if window_about.show then
       love.graphics.draw(window_about.normal,window_about.x,window_about.y)
