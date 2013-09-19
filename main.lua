@@ -229,59 +229,59 @@ function love.draw()
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
    love.graphics.draw(rocket,500,50)
-   if button_over(20,60,288,91) then
+   if button_over(20,60,288,70) then
       love.graphics.draw(button_tut.over,20,60)
-      if button_pressed(20,60,288,91) then
+      if button_pressed(20,60,288,70) then
          love.graphics.draw(button_tut.pressed,20,60)
       end
    else
       love.graphics.draw(button_tut.normal,20,60)
    end
 
-   if button_over(20,125,288,91) then
-      love.graphics.draw(button_versus.over,20,125)
-      if button_pressed(20,125,288,91) then
-         love.graphics.draw(button_versus.pressed,20,125)
+   if button_over(20,130,288,70) then
+      love.graphics.draw(button_versus.over,20,130)
+      if button_pressed(20,130,288,70) then
+         love.graphics.draw(button_versus.pressed,20,130)
       end
    else
-      love.graphics.draw(button_versus.normal,20,125)
+      love.graphics.draw(button_versus.normal,20,130)
    end
 
-   if button_over(20,190,288,91) then
-      love.graphics.draw(button_campaign.over,20,190)
-      if button_pressed(20,190,288,91) then
-         love.graphics.draw(button_campaign.pressed,20,190)
+   if button_over(20,200,288,70) then
+      love.graphics.draw(button_campaign.over,20,200)
+      if button_pressed(20,200,288,70) then
+         love.graphics.draw(button_campaign.pressed,20,200)
       end
    else
-      love.graphics.draw(button_campaign.normal,20,190)
+      love.graphics.draw(button_campaign.normal,20,200)
    end
 
-   if button_over(20,255,288,91) then
-      love.graphics.draw(button_options.over,20,255)
-      if button_pressed(20,255,288,91) then
-         love.graphics.draw(button_options.pressed,20,255)
+   if button_over(20,270,288,70) then
+      love.graphics.draw(button_options.over,20,270)
+      if button_pressed(20,270,288,70) then
+         love.graphics.draw(button_options.pressed,20,270)
       end
    else
-      love.graphics.draw(button_options.normal,20,255)
+      love.graphics.draw(button_options.normal,20,270)
    end
 
-   if button_over(20,320,288,91) then
-      love.graphics.draw(button_about.over,20,320)
-      if button_pressed(20,320,288,91) then
-         love.graphics.draw(button_about.pressed,20,320)
+   if button_over(20,340,288,70) then
+      love.graphics.draw(button_about.over,20,340)
+      if button_pressed(20,340,288,70) then
+         love.graphics.draw(button_about.pressed,20,340)
       end
    else
-      love.graphics.draw(button_about.normal,20,320)
+      love.graphics.draw(button_about.normal,20,340)
    end
 
-   if button_over(20,385,288,91) then
-      love.graphics.draw(button_exit.over,20,385)
-      if button_pressed(20,385,288,91) then
-         love.graphics.draw(button_exit.pressed,20,385)
+   if button_over(20,410,288,70) then
+      love.graphics.draw(button_exit.over,20,410)
+      if button_pressed(20,410,288,70) then
+         love.graphics.draw(button_exit.pressed,20,410)
          love.event.quit()
       end
    else
-      love.graphics.draw(button_exit.normal,20,385)
+      love.graphics.draw(button_exit.normal,20,410)
    end
 
    love.graphics.draw(cursor,love.mouse.getX(),love.mouse.getY())
