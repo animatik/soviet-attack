@@ -154,7 +154,12 @@ function love.load()
    lamp = love.graphics.newImage("img/bkg/lamp.png")
    button_tut = love.graphics.newImage("img/bkg/button_tut_normal.png")
    button_versus = love.graphics.newImage("img/bkg/button_versus_normal.png")
-   button_campaign = love.graphics.newImage("img/bkg/button_campaign_normal.png")
+   button_campaign = {}
+   table.insert(button_campaign,{normal,over,pressed})
+   button_campaign.normal = love.graphics.newImage("img/bkg/button_campaign_normal.png")
+   button_campaign.over = love.graphics.newImage("img/bkg/button_campaign_over.png")
+   button_campaign.pressed = love.graphics.newImage("img/bkg/button_campaign_pressed.png")
+   cursor = love.graphics.newImage("img/bkg/cursor.png")
    button_options = {}
    table.insert(button_options,{normal,over,pressed})
    button_options.normal = love.graphics.newImage("img/bkg/button_options_normal.png")
@@ -206,7 +211,14 @@ function love.draw()
    love.graphics.draw(rocket,500,50)
    love.graphics.draw(button_tut,20,60)
    love.graphics.draw(button_versus,20,125)
-   love.graphics.draw(button_campaign,20,190)
+   if button_over(20,190,288,91) then
+      love.graphics.draw(button_campaign.over,20,190)
+      if button_pressed(20,190,288,91) then
+         love.graphics.draw(button_campaign.pressed,20,190)
+      end
+   else
+      love.graphics.draw(button_campaign.normal,20,190)
+   end
    if button_over(20,255,288,91) then
       love.graphics.draw(button_options.over,20,255)
       if button_pressed(20,255,288,91) then
