@@ -15,7 +15,10 @@
    id="svg4759"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Новый документ 20">
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/kirill/soviet_attack/img/ico/32x32.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4761">
     <linearGradient
@@ -238,7 +241,7 @@
      id="layer1">
     <g
        id="g5387"
-       transform="matrix(0.10057311,0,0,0.09362015,235.60114,374.90312)">
+       transform="matrix(0.20114621,0,0,0.18724031,229.16446,294.30208)">
       <path
          transform="translate(26.982239,-24.67851)"
          d="m 673.37079,542.04584 c 0,175.72403 -142.45248,318.17651 -318.17652,318.17651 -175.72403,0 -318.176509,-142.45248 -318.176509,-318.17651 0,-175.72404 142.452479,-318.17652 318.176509,-318.17652 175.72404,0 318.17652,142.45248 318.17652,318.17652 z"
