@@ -86,6 +86,7 @@ function change_particles(tb,speed,shift,delta)
       end         
    end
 end
+
 function  draw_particles(tb,img,img2)
    for i = 1,#tb do
       if tb[i].status > -1 then
@@ -95,6 +96,19 @@ function  draw_particles(tb,img,img2)
       end
    end
 end
+
+function button_pressed(bx,by,bw,bh)
+   mx,my = love.mouse.getPosition()
+   md = love.mouse.isDown('l')
+   local pressed
+   if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
+      pressed = true
+   else
+      pressed = false
+   end
+   return md and pressed
+end
+
 function love.load()
    love.mouse.setVisible(false)
    play_address = soundtrecks[math.random(3)]
@@ -151,6 +165,9 @@ function love.update(dt)
    projector_move(projector1,-0.3,0.3,0.1,dt)
    projector_move(projector2,-0.4,0.1,0.1,dt)
    projector_move(projector3,-0.6,0.6,0.2,dt)
+   if button_pressed(20,385,288,91) then
+      love.event.quit()
+   end
 end
 
 --Draw result
