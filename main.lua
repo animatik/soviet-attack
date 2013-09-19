@@ -130,6 +130,18 @@ function button_pressed(bx,by,bw,bh)
    end
 end
 
+function pressed(bx,by,bw,bh)
+   mx,my = love.mouse.getPosition()
+   md = love.mouse.isDown('l')
+   local over
+    if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
+      over = true
+   else
+      over = false
+   end
+   return md and over
+end
+
 function love.mousepressed(x,y,button)
    if not (drag_now == '') then
       if button == "l"    
@@ -326,11 +338,12 @@ function love.draw()
    else
       love.graphics.draw(button_exit.normal,20,410)
    end
-   if button_pressed(window_about.x,window_about.y,10,10) then
+   if pressed(window_about.x,window_about.y,30,30) then
       window_about.show = false
       window_opened = false
-      drag_now = ''
    end
+   print(love.mouse.getX(),' ',love.mouse.getY(),'- mouse')
+   print(window_about.x,' ',window_about.y,'- window')
    if window_about.show then
       love.graphics.draw(window_about.normal,window_about.x,window_about.y)
    end
