@@ -97,16 +97,27 @@ function  draw_particles(tb,img,img2)
    end
 end
 
+function button_over(bx,by,bw,bh)
+   mx,my = love.mouse.getPosition()
+   local over
+   if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
+      over = true
+   else
+      over = false
+   end
+   return over
+end
+
 function button_pressed(bx,by,bw,bh)
    mx,my = love.mouse.getPosition()
    md = love.mouse.isDown('l')
-   local pressed
+   local over
    if mx<(bx+bw) and mx>bx and my<(by+bh) and my>by then
-      pressed = true
+      over = true
    else
-      pressed = false
+      over = false
    end
-   return md and pressed
+   return md and over
 end
 
 function love.load()
@@ -145,7 +156,11 @@ function love.load()
    button_versus = love.graphics.newImage("img/bkg/button_versus.png")
    button_campaign = love.graphics.newImage("img/bkg/button_campaign.png")
    button_options = love.graphics.newImage("img/bkg/button_options.png")
-   button_exit = love.graphics.newImage("img/bkg/button_exit.png")
+   button_exit = {}
+   table.insert(button_exit,{normal,over,pressed})
+   button_exit.normal = love.graphics.newImage("img/bkg/button_exit_normal.png")
+   button_exit.over = love.graphics.newImage("img/bkg/button_exit_over.png")
+   button_exit.pressed = love.graphics.newImage("img/bkg/button_exit_pressed.png")
    button_about = love.graphics.newImage("img/bkg/button_about.png")
    cursor = love.graphics.newImage("img/bkg/cursor.png")
    make_particles(far_bombs,3)
@@ -165,9 +180,6 @@ function love.update(dt)
    projector_move(projector1,-0.3,0.3,0.1,dt)
    projector_move(projector2,-0.4,0.1,0.1,dt)
    projector_move(projector3,-0.6,0.6,0.2,dt)
-   if button_pressed(20,385,288,91) then
-      love.event.quit()
-   end
 end
 
 --Draw result
@@ -188,6 +200,14 @@ function love.draw()
    love.graphics.draw(button_campaign,20,190)
    love.graphics.draw(button_options,20,255)
    love.graphics.draw(button_about,20,320)
-   love.graphics.draw(button_exit,20,385)
+   if button_over(20,385,288,91) then
+      love.graphics.draw(button_exit.over,20,385)
+      if button_pressed(20,385,288,91) then
+         love.graphics.draw(button_exit.pressed,20,385)
+         love.event.quit()
+      end
+   else
+      love.graphics.draw(button_exit.normal,20,385)
+   end
    love.graphics.draw(cursor,love.mouse.getX(),love.mouse.getY())
 end
