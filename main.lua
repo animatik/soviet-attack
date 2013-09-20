@@ -14,6 +14,7 @@
 --along with soviet-attack.  If not, see <http://www.gnu.org/licenses/>.
 
 --Loading media for main menu
+
 soundtrecks = love.filesystem.enumerate("snd/mus")
 soundwar = love.filesystem.enumerate("snd/war")
 soundexplosions = love.filesystem.enumerate("snd/exp")
@@ -172,7 +173,19 @@ function love.load()
    city = love.graphics.newImage("img/bkg/city.png")
    title = love.graphics.newImage("img/bkg/title.png")
    foot = love.graphics.newImage("img/bkg/foot.png")
-   rocket = love.graphics.newImage("img/bkg/rocket.png")
+   units = {}
+   units_image = {}
+   units_image = love.filesystem.enumerate("img/bkg/units/img/")
+   for i = 1,#units_image do
+      table.insert(units,{image,description,width,height,x,y})
+      units[i].image = love.graphics.newImage('img/bkg/units/img/'..units_image[i]..'/img1.png')
+      units[i].description = love.filesystem.read('img/bkg/units/txt/'..units_image[i]..'/description')
+      units[i].width = love.filesystem.read('img/bkg/units/txt/'..units_image[i]..'/width')
+      units[i].height = love.filesystem.read('img/bkg/units/txt/'..units_image[i]..'/height')
+      units[i].x = 768-units[i].width
+      units[i].y = 600-units[i].height+10
+   end
+   unit_random = math.random(#units)
    img_explosion = love.graphics.newImage("img/bkg/explosion.png")
    explosion = {}
    table.insert(explosion,{i,w,h})
@@ -244,6 +257,8 @@ function love.load()
    make_particles(far_bombs,3)
    make_particles(furthest_bombs,3)
    make_particles(bombs,3)
+   mainFont = love.graphics.newFont("fnt/furore.otf", 12)
+   descback = love.graphics.newImage("img/bkg/descback.png")
 end
 
 --function for updating
@@ -280,7 +295,7 @@ function love.draw()
    love.graphics.draw(lamp,projector3.x,projector3.y,projector3.r,1,1,75,586)
    love.graphics.draw(title,15,14)
    love.graphics.draw(foot,-8,490)
-   love.graphics.draw(rocket,500,50)
+   love.graphics.draw(units[unit_random].image,units[unit_random].x,units[unit_random].y)
    if button_over(20,60,288,70) then
       love.graphics.draw(button_tut.over,20,60)
       if button_pressed(20,60,288,70) then
@@ -342,9 +357,14 @@ function love.draw()
       window_about.show = false
       window_opened = false
    end
-   
+
    if window_about.show then
       love.graphics.draw(window_about.normal,window_about.x,window_about.y)
+   end
+   if button_over(units[unit_random].x,units[unit_random].y,units[unit_random].width,units[unit_random].height) then
+      love.graphics.setFont(mainFont)
+      --love.graphics.draw(descback,120,120)
+      love.graphics.print(units[unit_random].description,300,565)
    end
    love.graphics.draw(cursor,love.mouse.getX(),love.mouse.getY())
 end
